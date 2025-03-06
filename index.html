@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Recipe Recommender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Smart Recipe Recommender</h1>
+    </header>
+
+    <div class="container">
+        <div class="search-section">
+            <h2>Find Recipes</h2>
+            <label for="ingredients">Enter Ingredients (comma separated):</label>
+            <input type="text" id="ingredients" placeholder="e.g., chicken, rice, cheese">
+
+            <label for="diet">Dietary Preferences:</label>
+            <select id="diet">
+                <option value="none">None</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="gluten free">Gluten Free</option>
+                <option value="ketogenic">Keto</option>
+            </select>
+
+            <button id="get-recipes">Get Recipes</button>
+            <div id="loading" style="display:none;">Loading...</div>
+            <p id="error-message" style="color:red;"></p>
+        </div>
+    
+        <!-- recipes-section -->
+
+        <div id="recipes-section">
+            <h2>Recipes</h2>
+            <div id="recipes-container"></div>
+        </div>
+
+        <!-- favorites-section -->
+
+        <div id="favorites-section">
+            <h2>Favorites</h2>
+            <div id="favorites-container"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Ingredients and Instructions -->
+
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="recipe-title"></h2>
+            <h3>Ingredients</h3>
+            <ul id="recipe-ingredients"></ul>
+            <h3>Instructions</h3>
+            <div id="recipe-instructions"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Shopping List -->
+
+    <div id="shopping-list-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Shopping List</h2>
+            <ul id="shopping-list"></ul>
+            <button id="clear-shopping-list">Clear List</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
